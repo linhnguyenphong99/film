@@ -1,6 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
-import { User } from '../entity/user.entity';
+import { Controller, Get, Param, Post, UseGuards, Request } from '@nestjs/common';
 import { UserService } from '../service/user.service';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
 export class UserController {
@@ -9,5 +9,11 @@ export class UserController {
   @Get('/user')
   getHello(): Promise<any> {
     return this.userService.findAll();
+  }
+
+  @UseGuards(AuthGuard('local'))
+  @Post('/login')
+  async login(@Request() req) {
+    return req.user;
   }
 }

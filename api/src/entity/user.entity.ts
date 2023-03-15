@@ -5,6 +5,12 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ default: 1 })
+  username: string;
+
+  @Column({ default: 1 })
+  password: string;
+
   @Column()
   firstName: string;
 

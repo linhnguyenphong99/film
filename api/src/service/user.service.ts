@@ -22,4 +22,8 @@ export class UserService {
     })
     return recordsUserMap;
   }
+
+  async findOne(id: number): Promise<any> {
+    return this.usersRepository.findOneBy({ id });
+  }
 }
