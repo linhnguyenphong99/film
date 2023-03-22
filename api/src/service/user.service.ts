@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { IsNull, Repository } from 'typeorm';
 import { User } from '../entity/user.entity';
 
 @Injectable()
@@ -27,10 +27,12 @@ export class UserService {
     return this.usersRepository.findOneBy({ username });
   }
 
-  async create(res: User): Promise<any> {
-    const query = this.usersRepository.createQueryBuilder('user')
-      .where(`user.username LIKE :value`, { value: `%${res.username}%`})
-      .andWhere('user.password = :value', {value: res.password})
-    return query.getOne();
+  async create(res: User): Promise<any | undefined> {
+    const query = await this.usersRepository.createQueryBuilder('user')
+    .where(`user.username LIKE :value`, { value: `%${res.username}%`})
+    .andWhere('user.password = :password', {password: res.password}).getMany();
+    console.log(query.valueOf());
+
+    return query
   }
 }

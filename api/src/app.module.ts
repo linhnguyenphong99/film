@@ -5,9 +5,11 @@ import { UserModule } from './module/user.module';
 import { AuthModule } from './module/auth.module';
 import { UserController } from './controller/user.controller';
 import { ConfigModule } from '@nestjs/config';
+import { UserSchema } from './schema/user.schema';
 
 @Module({
   imports: [
+    TypeOrmModule.forFeature([UserSchema]),
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -23,6 +25,7 @@ import { ConfigModule } from '@nestjs/config';
     UserModule,
     AuthModule,
   ],
+  providers: [UserModule],
   controllers: [UserController]
 })
 export class AppModule {}

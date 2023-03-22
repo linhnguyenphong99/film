@@ -1,9 +1,9 @@
 import { Controller, Get, Param, Post, UseGuards, Request } from '@nestjs/common';
 import { UserService } from '../service/user.service';
 import { AuthGuard } from '@nestjs/passport';
-import { AuthService } from 'src/service/auth.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { LocalAuthGuard } from 'src/auth/local-auth.guard';
+import { AuthService } from '../service/auth.service';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { LocalAuthGuard } from '../auth/local-auth.guard';
 
 @Controller()
 export class UserController {
