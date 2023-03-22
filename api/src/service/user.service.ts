@@ -33,6 +33,6 @@ export class UserService {
     const query = this.usersRepository.createQueryBuilder('user')
       .where(`user.username LIKE :value`, { value: `%${res.username}%`})
       .andWhere('user.password = :value', {value: res.password})
-    return query.getMany();
+    return query.getOne();
   }
 }
