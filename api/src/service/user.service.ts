@@ -31,7 +31,6 @@ export class UserService {
     const query = await this.usersRepository.createQueryBuilder('user')
     .where(`user.username LIKE :value`, { value: `%${res.username}%`})
     .andWhere('user.password = :password', {password: res.password}).getMany();
-    console.log(query.valueOf());
 
     return query
   }
