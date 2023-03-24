@@ -2,7 +2,6 @@ import { Movie } from "./src/entity/movie.entity";
 import { User } from "./src/entity/user.entity";
 
 module.exports = {
-  name: "default",
   type: "postgres",
   database: process.env.DB_DATABSE,
   username: process.env.DB_USERNAME,
