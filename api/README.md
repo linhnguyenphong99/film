@@ -32,6 +32,17 @@
 $ npm install
 ```
 
+
+## seeder
+
+```bash
+# see your config
+$ npm run seed:config
+
+# run seeding
+$ npm run seed:run
+```
+
 ## Running the app
 
 ```bash

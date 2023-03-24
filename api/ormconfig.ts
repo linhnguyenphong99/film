@@ -1,3 +1,4 @@
+import { Movie } from "./src/entity/movie.entity";
 import { User } from "./src/entity/user.entity";
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
   database: process.env.DB_DATABSE,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
-  entities: [User],
+  entities: [User, Movie],
   synchronize: true,
   logging: false,
   seeds: ['src/database/seed/**/*{.ts,.js}'],

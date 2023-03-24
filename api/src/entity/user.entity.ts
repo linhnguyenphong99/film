@@ -7,17 +7,4 @@ export class User {
   @Column() username: string;
 
   @Column() password: string;
-
-  @BeforeInsert()
-  async setPassword(password: string) {
-    this.password = password
-  }
-}
-
-@Entity()
-export class Pet {
-  @PrimaryGeneratedColumn() id: string
-  @Column() name: string
-  @Column() age: number
-  user: User
 }
