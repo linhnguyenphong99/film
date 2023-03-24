@@ -2,12 +2,9 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class Language {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn() id: number;
 
-  @Column()
-  code: string;
+  @Column() code: string;
 
-  @Column()
-  name: string;
+  @Column() name: string;
 }

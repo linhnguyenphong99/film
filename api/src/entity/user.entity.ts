@@ -2,24 +2,17 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn() id: number;
 
-  @Column()
-  username: string;
+  @Column() username: string;
 
-  @Column()
-  password: string;
+  @Column() password: string;
 
-  @Column()
-  firstName: string;
+  @Column() firstName: string;
 
-  @Column()
-  lastName: string;
+  @Column() lastName: string;
 
-  @Column({ nullable: true })
-  mail: string;
+  @Column({ nullable: true }) mail: string;
 
-  @Column({ default: true })
-  isActive: boolean;
+  @Column({ default: true }) isActive: boolean;
 }
