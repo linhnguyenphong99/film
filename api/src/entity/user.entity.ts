@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, BeforeInsert, ManyToOne, JoinColumn } from 'typeorm';
 
 @Entity()
 export class User {
@@ -8,11 +8,16 @@ export class User {
 
   @Column() password: string;
 
-  @Column() firstName: string;
+  @BeforeInsert()
+  async setPassword(password: string) {
+    this.password = password
+  }
+}
 
-  @Column() lastName: string;
-
-  @Column({ nullable: true }) mail: string;
-
-  @Column({ default: true }) isActive: boolean;
+@Entity()
+export class Pet {
+  @PrimaryGeneratedColumn() id: string
+  @Column() name: string
+  @Column() age: number
+  user: User
 }

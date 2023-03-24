@@ -4,17 +4,17 @@ import { Gender } from "./gender.entity";
 import { Genre } from "./genre.entity";
 import { Keyword } from "./keyword.entity";
 import { Language } from "./language.entity";
-import { LanguageRole } from "./languageRole.entity";
+import { LanguageRole } from "./language-role.entity";
 import { Movie } from "./movie.entity";
-import { MovieCast } from "./movieCast.entity";
-import { MovieCompagny } from "./movieCompany.entity";
-import { MovieCrew } from "./movieCrew.entity";
-import { MovieGenre } from "./movieGenre.entity";
-import { MovieKeyword } from "./movieKeyword.entity";
-import { MovieLanguage } from "./movieLanguage.entity";
+import { MovieCast } from "./movie-cast.entity";
+import { MovieCompagny } from "./movie-company.entity";
+import { MovieCrew } from "./movie-crew.entity";
+import { MovieGenre } from "./movie-genre.entity";
+import { MovieKeyword } from "./movie-keyword.entity";
+import { MovieLanguage } from "./movie-language.entity";
 import { Person } from "./person.entity copy";
-import { ProductCompany } from "./productCompany.entity";
-import { ProductionCountry } from "./productionCountry.entity";
+import { ProductCompany } from "./product-company.entity";
+import { ProductionCountry } from "./production-country.entity";
 import { User } from "./user.entity";
 
 const entities = [

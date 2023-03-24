@@ -14,10 +14,8 @@ export class UserService {
     const recordsUser = await this.usersRepository.find();
     const recordsUserMap = recordsUser.map(record => {
       return {
-        'firstName': record.firstName,
-        'lastName' : record.lastName,
-        'isActive' : record.isActive,
-        'mail'     : record.mail
+        'firstName': record.username,
+        'lastName' : record.password,
       }
     })
     return recordsUserMap;

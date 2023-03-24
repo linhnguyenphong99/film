@@ -18,7 +18,7 @@ import entities from './entity';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABSE,
       entities: entities,
-      synchronize: false,
+      synchronize: true,
       autoLoadEntities: true
     }),
     UserModule,
