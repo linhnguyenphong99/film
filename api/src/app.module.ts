@@ -12,11 +12,7 @@ import entities from './entity';
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: Number.parseInt(process.env.DB_USERNAME),
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABSE,
+      url:'postgres://linhnguyenphong99:zVWavN8R1Quf@ep-weathered-glade-501739.ap-southeast-1.aws.neon.tech/neondb?ssl=true',
       entities: entities,
       synchronize: true,
       autoLoadEntities: true
